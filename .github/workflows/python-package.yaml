@@ -21,10 +21,10 @@ jobs:
                 pip install django djangorestframework django-fsm garpixcms
           
             - name: Build binary wheel and a source tarball
-              run: python backend/manage.py pack backend/garpix_order
+              run: SECRET_KEY=${{ secrets.test_pypi }} python backend/manage.py pack backend/garpix_order
 
-            - name: Publish distribution to PyPI
-              uses: pypa/gh-action-pypi-publish@master
-              with:
-                password: ${{ secrets.test_pypi }}
-                repository_url: https://upload.test.pypi.org/legacy/
+#            - name: Publish distribution to PyPI
+#              uses: pypa/gh-action-pypi-publish@master
+#              with:
+#                password: ${{ secrets.test_pypi }}
+#                repository_url: https://upload.test.pypi.org/legacy/
