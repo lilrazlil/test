@@ -15,10 +15,10 @@ jobs:
               with:
                 python-version: 3.9
 
-#            - name: Install dependencies
-#              run: |
-#                python -m pip install --upgrade pip
-#                pip install django djangorestframework django-fsm
+            - name: Install dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install django djangorestframework django-fsm garpixcms
           
             - name: Build binary wheel and a source tarball
               run: python backend/manage.py pack backend/garpix_order
