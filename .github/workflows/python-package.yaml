@@ -21,7 +21,7 @@ jobs:
 #                pip install django djangorestframework django-fsm
           
             - name: Build binary wheel and a source tarball
-              run: python setup.py sdist
+              run: python backend/garpix_order/setup.py sdist
 
             - name: Publish distribution to PyPI
               uses: pypa/gh-action-pypi-publish@master
