@@ -8,7 +8,7 @@ with open(path.join(settings.BASE_DIR, '..', 'README.md'), encoding='utf-8') as 
     long_description = convert(f.read())
 
 setup(
-    name='test',
+    name='garpix-order',
     version='1.0.0-rc5',
     description='',
     long_description=long_description,
