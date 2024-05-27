@@ -25,7 +25,7 @@ jobs:
                 echo "${{ secrets.env }}" > .env
 
             - name: Build binary wheel and a source tarball
-              run: SECRET_KEY=${{ secrets.test_pypi }} python backend/manage.py pack backend/garpix_order
+              run: ls && pwd && SECRET_KEY=${{ secrets.test_pypi }} python backend/manage.py pack backend/garpix_order
 
 #            - name: Publish distribution to PyPI
 #              uses: pypa/gh-action-pypi-publish@master
