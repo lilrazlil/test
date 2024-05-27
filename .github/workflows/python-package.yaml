@@ -25,6 +25,7 @@ jobs:
             - name: Create venv
               run: |
                 pipenv install
+                pipenv install docutils
 
             - name: Create env
               run: |
