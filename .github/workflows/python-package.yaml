@@ -31,6 +31,10 @@ jobs:
               run: |
                 echo "${{ secrets.env }}" > .env
 
+            - name: Create env
+              run: |
+                cp README.md backend/garpix_order
+
             - name: Build binary wheel and a source tarball
               run: pipenv run python backend/manage.py startpackage garpix_order && SECRET_KEY=${{ secrets.test_pypi }} pipenv run python backend/manage.py pack garpix_order
 
