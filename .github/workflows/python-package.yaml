@@ -10,22 +10,23 @@ jobs:
         steps:
             - uses: actions/checkout@main
 
-            - name: Initialize Python 3.9
-              uses: actions/setup-python@v1
-              with:
-                python-version: 3.9
-
             - name: Install dependencies
               run: |
                 python -m pip install --upgrade pip
-                pip install django garpixcms django-polymorphic django-fsm django-fsm-admin coverage psycopg2-binary
+                pip3 install cookiecutter
+                pip3 install pipenv
+
+            - name: Create venv
+              run: |
+                pipenv install
+                pipenv shell
 
             - name: Create env
               run: |
                 echo "${{ secrets.env }}" > .env
 
             - name: Build binary wheel and a source tarball
-              run: ls && pwd && SECRET_KEY=${{ secrets.test_pypi }} python backend/manage.py pack garpix_order
+              run: python3 backend/manage.py startpackage garpix_order && SECRET_KEY=${{ secrets.test_pypi }} python backend/manage.py pack garpix_order
 
 #            - name: Publish distribution to PyPI
 #              uses: pypa/gh-action-pypi-publish@master
