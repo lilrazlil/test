@@ -25,14 +25,13 @@ jobs:
             - name: Create venv
               run: |
                 pipenv install
-                pipenv shell
 
             - name: Create env
               run: |
                 echo "${{ secrets.env }}" > .env
 
             - name: Build binary wheel and a source tarball
-              run: python3 backend/manage.py startpackage garpix_order && SECRET_KEY=${{ secrets.test_pypi }} python backend/manage.py pack garpix_order
+              run: pipenv run python backend/manage.py startpackage garpix_order && SECRET_KEY=${{ secrets.test_pypi }} pipenv run python backend/manage.py pack garpix_order
 
 #            - name: Publish distribution to PyPI
 #              uses: pypa/gh-action-pypi-publish@master
