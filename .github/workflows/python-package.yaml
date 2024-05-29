@@ -13,7 +13,7 @@ jobs:
             - name: Initialize Python 3.9
               uses: actions/setup-python@v1
               with:
-                python-version: 3.8
+                python-version: 3.9
 
 
             - name: Install dependencies
@@ -25,7 +25,6 @@ jobs:
             - name: Create venv
               run: |
                 pipenv install
-                pipenv install docutils
 
             - name: Create env
               run: |
