@@ -13,7 +13,7 @@ setup(
     name='garpix-order',
     version='1.0.0-rc5',
     description='',
-    long_description=long_description,
+    long_description='',
     url='https://github.com/lilrazlil/test',
     author='Garpix LTD',
     author_email='info@garpix.com',
