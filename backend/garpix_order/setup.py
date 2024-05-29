@@ -4,8 +4,10 @@ from m2r import convert
 from django.conf import settings
 
 
-with open(path.join(settings.BASE_DIR, '..', 'README.md'), encoding='utf-8') as f:
-    long_description = convert(f.read())
+here = path.join(path.abspath(path.dirname(__file__)), 'garpix_order')
+
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
     name='garpix-order',
