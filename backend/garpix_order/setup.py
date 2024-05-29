@@ -10,7 +10,7 @@ from setuptools import setup, find_packages
 #     long_description = f.read()
 
 setup(
-    name='garpix-order',
+    name='garpix_order',
     version='1.0.0-rc5',
     description='',
     long_description='',
